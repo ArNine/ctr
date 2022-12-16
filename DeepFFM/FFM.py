@@ -17,6 +17,7 @@ class FFM(nn.Module):
         for i in range(0, self.feature_num):
             m1.__setitem__((i, self.feature_to_field(i)), 1)
         self.xor_matrix = m1.to(device)
+        self.a = nn.Parameter(torch.randn([self.feature_num, self.feature_num]).float().fill_(1.0))
 
     def feature_to_field(self, n):
         # 13为dense_feature的个数
@@ -36,11 +37,10 @@ class FFM(nn.Module):
             # (feature_num, field_num)
             m4 = m3[:, self.feature_to_field(i)]
             # print(torch.mm(torch.mul(m4, self.xor_matrix).sum(dim=1).reshape(1, 221), all_feature_tran))
-            result += torch.mul(torch.mm(torch.mul(m4, self.xor_matrix).sum(dim=1).reshape(1, self.feature_num), all_feature_tran),
+            result += torch.mul(torch.mm(torch.mul(m4, self.xor_matrix).sum(dim=1).reshape(1, self.feature_num), torch.einsum('kj,ki->ki', [self.a[i].reshape(self.feature_num, -1), all_feature_tran])),
                                 all_feature[:, i])
 
         linear = self.linear(all_feature)
-
         output = linear + result.reshape([-1, 1])
         output = output.reshape(-1)
         output = torch.sigmoid(output)
