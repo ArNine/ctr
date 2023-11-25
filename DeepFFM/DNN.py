@@ -5,7 +5,7 @@ class DNN(nn.Module):
     """
     Dnn part
     """
-    def __init__(self, hidden_units, dropout=0.):
+    def __init__(self, hidden_units, dropout=0.4):
         """
         hidden_units: 列表， 每个元素表示每一层的神经单元个数， 比如[256, 128, 64], 两层网络， 第一层神经单元128， 第二层64， 第一个维度是输入维度
         dropout: 失活率

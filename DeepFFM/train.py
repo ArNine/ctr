@@ -63,7 +63,7 @@ def auc(y_pred, y_true):
 def run():
     # 获取当前时间 yyyy-mm-dd hh:hour:mm
     log_folder_name = time.strftime("%Y-%m-%d %H-%M-%S", time.localtime())
-    log = set_log(log_folder_name, False)
+    log = set_log(log_folder_name)
     device = torch.device("cpu")
     if torch.cuda.is_available():
         device = torch.device("cuda")
