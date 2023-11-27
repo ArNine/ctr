@@ -36,7 +36,7 @@ class Informer(nn.Module):
         self.layer_norm = nn.LayerNorm(d_model)
 
     def forward(self, x):
-        # 残差
+        # 残
         res_x = x
         x = self.layer_norm(x)
         x, attn = self.attn0(x, x, x)
