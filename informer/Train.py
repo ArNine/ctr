@@ -32,7 +32,7 @@ class Train:
         self.all_feature_num = all_feature_num
 
     def train(self):
-        # 获取当前时间 yyyy-mm-dd hh:hour:mm
+        # 获取当前时间 yyyy-mm-dd hh:hour
         log_folder_name = time.strftime("%Y-%m-%d %H-%M-%S", time.localtime())
         log = self.set_log(log_folder_name)
         device = torch.device("cpu")
