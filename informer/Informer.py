@@ -42,7 +42,7 @@ class Informer(nn.Module):
         x, attn = self.attn0(x, x, x)
         x = res_x + x
         x = self.conv0(x)
-        # print(x.shape)
+        # print(x.shap
         x, attn = self.attn1(x, x, x)
         x = self.conv1(x)
         x, attn = self.attn2(x, x, x)
