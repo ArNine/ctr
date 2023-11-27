@@ -30,7 +30,7 @@ def data_process(file: None, nrows):
     print("data_process")
     print(df)
     # 划分验证集
-    # train_set, val_set = train_test_split(df, test_size=sizes[1])
+    # train_set, val_set = train_test_split(df, test_size=sizes[1]
 
     # 保存文件
     df.reset_index(drop=True, inplace=True)
