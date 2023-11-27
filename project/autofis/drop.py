@@ -16,7 +16,7 @@ def plot_metric(dfhistory):
     # plt.title('AUC curves with different Dropout values')
     plt.xlabel("Dropout")
     plt.ylabel(metric)
-    # plt.legend(['Inner Product', 'Outer Product'])
+    # plt.legend(['Inner Product', 'Outer Product']
     plt.show()
 ss = """0.1 0.776933 0.777033
 0.2 0.777938 0.778038
