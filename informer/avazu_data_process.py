@@ -24,7 +24,7 @@ def data_process(file: None, nrows):
         le = LabelEncoder()
         data_df[feat] = le.fit_transform(data_df[feat]) + 1
     # ord = OrdinalEncoder()
-    # data_df[features] = ord.fit_transform(data_df[features])
+    # data_df[features] = ord.fit_transform(data_df[features
 
     df = pd.concat([pd.DataFrame(data_df)], axis=1, join='outer')
     print("data_process")
