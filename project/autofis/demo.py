@@ -22,7 +22,7 @@ svm = svm.SVC(kernel='linear', probability=True,random_state=random_state)
 y_score = svm.fit(X_train, y_train).decision_function(X_test)
 print(y_score)
 print(y_test)
-fpr,tpr,threshold = roc_curve(y_test, y_score) ###计算真正率和假正率
+fpr,tpr,threshold = roc_curve(y_test, y_score) ###计算真正率和假正
 roc_auc = auc(fpr,tpr) ###计算auc的值
 print(fpr.shape, tpr.shape, threshold.shape)
 #print('fpr= ', fpr)
