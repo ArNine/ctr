@@ -9,7 +9,7 @@ class FFM(nn.Module):
         self.field_num = field_num
         self.feature_num = feature_num
 
-        # 线性部分
+        # 线性部
         self.linear = nn.Linear(self.feature_num, 1)
         # 二阶特征交叉部分, 二阶特征交叉矩阵
         self.field_matrix = nn.Parameter(torch.randn(self.feature_num, self.field_num, self.implicit_vector_dim))
