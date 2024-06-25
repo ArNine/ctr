@@ -3,7 +3,7 @@ import torch
 import torch.nn.functional as F
 class DNN(nn.Module):
     """
-    Dnn part
+    Dnn part111111
     """
     def __init__(self, hidden_units, active_func, dropout=0.4):
         """
